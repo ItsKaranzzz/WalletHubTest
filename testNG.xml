@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Wallet Hub Review Feed Test">
+
+	<test name="Review-Feeds Test">
+
+		<classes>
+			<class name="com.wallethub.qa.tests.ReviewfeedTest" />
+
+		</classes>
+	</test>
+</suite>
