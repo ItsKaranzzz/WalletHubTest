@@ -41,11 +41,20 @@ public class PostingReviewCommentsTest extends BaseClass {
 		oTestPage = new TestInsuranceCompanyPage();
 		oReviewPage = oTestPage.hoveringOntotheRatingStars();
 		oReviewPage.selectPolicyType(oProp.getProperty("policyType"));
-		oReviewPage.clickOnStars();
+
 		oReviewPage.enterReviewComments(oProp.getProperty("postMessage"));
 
-	}
+		oReviewPage.clickonSubmit();
 
+		oReviewPage.handleAlert();
+
+		oReviewPage.clickOnStars();
+
+		oReviewPage.clickonSubmit();
+
+		oReviewPage.checkthePostedCommentSentorNot();
+
+	}
 	@Test(enabled = false)
 	public void verifyPostonUserProfile() {
 
