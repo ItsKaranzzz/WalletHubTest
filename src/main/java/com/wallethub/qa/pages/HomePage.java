@@ -52,6 +52,7 @@ public class HomePage extends BaseClass {
 
 	public UserProfile openUserProfile() {
 		Actions a = new Actions(driver);
+		oWait.until(ExpectedConditions.elementToBeClickable(userLink));
 		a.moveToElement(userLink).build().perform();
 		a.moveToElement(userProfile).click().perform();
 
