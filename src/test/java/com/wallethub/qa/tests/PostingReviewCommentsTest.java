@@ -2,6 +2,7 @@ package com.wallethub.qa.tests;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
 import org.testng.annotations.BeforeMethod;
@@ -55,11 +56,13 @@ public class PostingReviewCommentsTest extends BaseClass {
 		oReviewPage.checkthePostedCommentSentorNot();
 
 	}
-	@Test(enabled = false)
+
+	@Test()
 	public void verifyPostonUserProfile() {
 
 		oUsrProf = oHomePage.openUserProfile();
 		oUsrProf.clickOnReviews();
+		Assert.assertTrue(oUsrProf.checkPostedCommentOnUSerProfile("kajshdkjahskjd"));
 	}
 
 	@AfterMethod

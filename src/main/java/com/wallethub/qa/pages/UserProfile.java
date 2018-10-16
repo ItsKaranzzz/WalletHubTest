@@ -1,5 +1,6 @@
 package com.wallethub.qa.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -17,5 +18,10 @@ public class UserProfile extends BaseClass {
 
 	public void clickOnReviews() {
 		profilereviews.click();
+	}
+
+	public boolean checkPostedCommentOnUSerProfile(String input) {
+
+		return driver.findElement(By.xpath("//p[starts-with(text(),'" + input + "')]")).isDisplayed();
 	}
 }

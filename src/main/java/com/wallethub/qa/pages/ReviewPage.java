@@ -2,6 +2,7 @@ package com.wallethub.qa.pages;
 
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.wallethub.qa.base.BaseClass;
+import com.wallethub.qa.utilities.Utils;
 
 public class ReviewPage extends BaseClass {
 	public WebDriverWait oWait;
@@ -23,7 +25,7 @@ public class ReviewPage extends BaseClass {
 	@FindBy(xpath = "//input[@type='submit' and @value='Submit']")
 	private WebElement submitComments;
 
-	@FindBy(xpath = "//h2[contains(text(),'Before we publish your review we need you to verify your email.')]")
+	@FindBy(xpath = "//h1[text()='Awesome!']")
 	private WebElement postCommentStatusCheck;
 
 	@FindBy(xpath = "//span[contains(text(),'5')]/parent::a")
