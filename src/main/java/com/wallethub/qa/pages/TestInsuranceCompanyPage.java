@@ -39,13 +39,7 @@ public class TestInsuranceCompanyPage extends BaseClass {
 		List<WebElement> stars = driver.findElements(By.xpath(
 				"//span[@class='wh-rating rating_4_5']/following-sibling::div[@class='wh-rating-choices']/descendant::a"));
 
-		for (WebElement e : stars) {
-			wait.until(ExpectedConditions.elementToBeClickable(e));
-			action.moveToElement(e).build().perform();
-
-			if (e.getText().equals("5"))
-				action.moveToElement(e).click().perform();
-		}
+		Utils.hoveringToStars(stars, wait);
 
 		return new ReviewPage();
 
