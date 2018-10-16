@@ -14,9 +14,21 @@ public class Utils extends BaseClass {
 		oProp = new Properties();
 
 		FileInputStream fpropReader = new FileInputStream(new File(
-				"C:\\Users\\DV6\\eclipse-workspace\\WalletHubTest\\src\\main\\java\\com\\wallethub\\qa\\config\\configurations.properties"));
+				"C:\\Users\\kxc212\\Downloads\\WalletHubTest-master\\src\\main\\java\\com\\wallethub\\qa\\config\\configurations.properties"));
 		oProp.load(fpropReader);
 
 		return oProp;
+	}
+
+	public static void hoveringToStars(List<WebElement> inputSet, WebDriverWait oWait) throws InterruptedException {
+		Actions action = new Actions(driver);
+		for (WebElement e : inputSet) {
+			oWait.until(ExpectedConditions.elementToBeClickable(e));
+			action.moveToElement(e).build().perform();
+
+			if (e.getText().equals("5"))
+				action.moveToElement(e).click().perform();
+
+		}
 	}
 }
