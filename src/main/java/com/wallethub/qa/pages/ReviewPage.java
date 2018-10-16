@@ -20,8 +20,14 @@ public class ReviewPage extends BaseClass {
 	@FindBy(xpath = "//textarea[@name='review']")
 	private WebElement reviewComments;
 
-	@FindBy(xpath = "//input[@type='submit']")
+	@FindBy(xpath = "//input[@type='submit' and @value='Submit']")
 	private WebElement submitComments;
+
+	@FindBy(xpath = "//h2[contains(text(),'Before we publish your review we need you to verify your email.')]")
+	private WebElement postCommentStatusCheck;
+
+	@FindBy(xpath = "//span[contains(text(),'5')]/parent::a")
+	private WebElement lastStar;
 
 	public ReviewPage() {
 
@@ -35,22 +41,38 @@ public class ReviewPage extends BaseClass {
 		driver.findElement(By.xpath("//a[@data-target='" + policyType + "']/parent::li")).click();
 	}
 
-	public void enterReviewComments(String comments) {
+	public void enterReviewComments(String comments) throws InterruptedException {
 		reviewComments.clear();
 		reviewComments.sendKeys(comments);
-		submitComments.click();
+
 	}
 
-	public void clickOnStars() {
+	public void clickonSubmit() throws InterruptedException {
+		oWait.until(ExpectedConditions.elementToBeClickable(submitComments));
+		submitComments.click();
+
+		Thread.sleep(2000);
+	}
+
+	public void clickOnStars() throws InterruptedException {
 
 		List<WebElement> stars = driver.findElements(By.xpath("//span[@id='overallRating']/a"));
 
-		for (WebElement e : stars) {
+		Utils.hoveringToStars(stars, oWait);
 
-			oWait.until(ExpectedConditions.elementToBeClickable(e));
-			e.click();
+		lastStar.click();
 
-		}
+	}
 
+	public boolean checkthePostedCommentSentorNot() {
+
+		oWait.until(ExpectedConditions.elementToBeClickable(postCommentStatusCheck));
+		return postCommentStatusCheck.isDisplayed();
+	}
+
+	public void handleAlert() {
+
+		Alert a = driver.switchTo().alert();
+		a.accept();
 	}
 }
