@@ -1,6 +1,20 @@
 # WalletHubTest
 Simulation of basic Selenium concepts integrated into a single framework design using Page Object modeling approach.
 
+Contents:
+
+Source Folder having below packages:
+
+main:
+  -base package: Base of the whole project
+  -config package: For configuration required to setup the project
+  -drivers package: Contains necessary drivers required to run the scripts
+  -pages package: Application pages covered during the simulation
+  -Utilities package: Consists of all the common functions required
+  
+test:
+  -tests package: Consists of all the test cases to be executed
+  
 
 How to Run...?
 
