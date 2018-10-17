@@ -15,12 +15,13 @@ import com.wallethub.qa.base.BaseClass;
 
 public class Utils extends BaseClass {
 
+	public static final String CONFIG_FILE_PATH = "C:\\\\Users\\\\kxc212\\\\Downloads\\\\WalletHubTest-master\\\\src\\\\main\\\\java\\\\com\\\\wallethub\\\\qa\\\\config\\\\configurations.properties";
+
 	public static Properties propertyReader() throws IOException {
 
 		oProp = new Properties();
 
-		FileInputStream fpropReader = new FileInputStream(new File(
-				"E:\\Program Files\\MyWorkspace\\WalletHubTest\\WalletHubTest\\src\\main\\java\\com\\wallethub\\qa\\config\\configurations.properties"));
+		FileInputStream fpropReader = new FileInputStream(new File(CONFIG_FILE_PATH));
 		oProp.load(fpropReader);
 
 		return oProp;
