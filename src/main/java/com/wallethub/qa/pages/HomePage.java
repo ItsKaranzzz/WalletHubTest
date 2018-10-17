@@ -24,7 +24,7 @@ public class HomePage extends BaseClass {
 	@FindBy(xpath = "//a[contains(text(),'Profile')]")
 	private WebElement userProfile;
 
-	@FindBy(xpath = "//h2[text()='Cell Phone Number']")
+	@FindBy(xpath = "//h2[text()='Last 4 Of Your SSN']")
 	private WebElement cellDetails;
 
 	public HomePage() {
