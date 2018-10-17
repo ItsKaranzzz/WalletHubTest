@@ -47,11 +47,11 @@ public class PostingReviewCommentsTest extends BaseClass {
 
 		oReviewPage.clickonSubmit();
 
-		oReviewPage.handleAlert();
+		// oReviewPage.handleAlert();
 
-		oReviewPage.clickOnStars();
+		// oReviewPage.clickOnStars();
 
-		oReviewPage.clickonSubmit();
+		// oReviewPage.clickonSubmit();
 
 		oReviewPage.checkthePostedCommentSentorNot();
 
@@ -62,12 +62,13 @@ public class PostingReviewCommentsTest extends BaseClass {
 
 		oUsrProf = oHomePage.openUserProfile();
 		oUsrProf.clickOnReviews();
-		Assert.assertTrue(oUsrProf.checkPostedCommentOnUSerProfile("kajshdkjahskjd"));
+		Assert.assertTrue(oUsrProf.checkPostedCommentOnUSerProfile(oProp.getProperty("postMessage")));
 	}
 
 	@AfterMethod
 	public void TearDown() {
 		driver.quit();
 	}
+
 
 }
