@@ -5,25 +5,25 @@ Simulation of basic Selenium concepts integrated into a single framework design 
 
 Source Folder having below packages:
 
-# main:
+main:
   -base package: Base of the whole project
   -config package: For configuration required to setup the project
   -drivers package: Contains necessary drivers required to run the scripts
   -pages package: Application pages covered during the simulation
   -Utilities package: Consists of all the common functions required
   
-# test:
+test:
   -tests package: Consists of all the test cases to be executed
   
 
-How to Run...?
+# How to Run...?
 
 Tools Required:
 Eclipse IDE
 Integrated Maven
 testNG
 
-Steps:
+# Steps:
 1. Pull the code to local machine
 2. Import into Eclipse Workspace
 3. Edit the Config file and provide the source folder path 
@@ -35,7 +35,7 @@ or
 Run the Maven POM.xml file and build the project.
 
 
-Reports
+# Reports
 1. Validate the testNG reports from test-Output folder using index.html file.
 
 
