@@ -14,16 +14,13 @@ main:
   
 test:
   -tests package: Consists of all the test cases to be executed
-  
-
-# How to Run...?
-
-Tools Required:
+ 
+# Tools Required:
 Eclipse IDE
 Integrated Maven
 testNG
 
-# Steps:
+# How to Run...?
 1. Pull the code to local machine
 2. Import into Eclipse Workspace
 3. Edit the Config file and provide the source folder path 
