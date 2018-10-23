@@ -3,6 +3,7 @@ package com.wallethub.qa.utilities;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
 
@@ -15,13 +16,13 @@ import com.wallethub.qa.base.BaseClass;
 
 public class Utils extends BaseClass {
 
-	public static final String CONFIG_FILE_PATH = "C:\\\\Users\\\\kxc212\\\\Downloads\\\\WalletHubTest-master\\\\src\\\\main\\\\java\\\\com\\\\wallethub\\\\qa\\\\config\\\\configurations.properties";
+	//public static final String CONFIG_FILE_PATH = "C:\\\\Users\\\\kxc212\\\\Downloads\\\\WalletHubTest-master\\\\src\\\\main\\\\java\\\\com\\\\wallethub\\\\qa\\\\config\\\\configurations.properties";
 
 	public static Properties propertyReader() throws IOException {
 
 		oProp = new Properties();
 
-		FileInputStream fpropReader = new FileInputStream(new File(CONFIG_FILE_PATH));
+		InputStream fpropReader = BaseClass.class.getResourceAsStream("/com/wallethub/qa/config/configurations.properties");
 		oProp.load(fpropReader);
 
 		return oProp;
